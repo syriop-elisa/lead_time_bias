@@ -12,7 +12,7 @@ The code for simulating the data is available in the folder [`simulation`](https
 
 * [`simulation-script.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/simulation/simulation-script.R): main file with parameters values
 * [`natural-history-model.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/simulation/natural-history-model.R): simulate tumour growth and age at symptomatic detection in the absence of screening
-* [`simulate-fpm.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/simulation/simulate-fpm.R): define function logcumhaz for fitting flexible parametric survival model for death from breast cancer based on registry data in Sweden         
+* [`simulate-fpm.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/simulation/simulate-fpm.R): define function `logcumhaz` for fitting flexible parametric survival model for death from breast cancer based on registry data in Sweden         
 * [`screening.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/simulation/screening.R): impose screening scenarios with different sensitivity and attendance
 
 The above files will return 200 simulates datasets, each called `simdata_maxt30_wide_i.dta` with i taking values 1 to 200. 
