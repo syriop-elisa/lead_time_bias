@@ -16,7 +16,10 @@ The code for simulating the data is available in the folder [`simulation`](https
 * [`screening.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/simulation/screening.R): impose screening scenarios with different sensitivity and attendance
 
 The above files will return 200 simulates datasets, each called `simdata_maxt30_wide_i.dta` with i taking values 1 to 200. 
-These files are omitted from the repository as they are too large but an example of those is given under [`simdata_maxt30_wide_1.dta`](https://github.com/syriop-elisa/lead_time_bias/blob/main/dta/simdata_maxt30_wide_1.dta)
+These files are omitted from the repository as they are too large but an example of the first simulated dataset is given under [`simdata_wide_1.dta`](https://github.com/syriop-elisa/lead_time_bias/blob/main/dta/simdata_wide_1.dta)
 
-After creating the simulated datasets, estimates of interest (i.e. externally age-standardised 10-year relative survival, LLE and PLL) are obtained in Stata using file [`obtain_estimates.do`](https://github.com/syriop-elisa/lead_time_bias/blob/main/analysis/obtain_estimates.do)
-The output of this file called [`Estimatesmaxt30.dta`](https://github.com/syriop-elisa/lead_time_bias/blob/main/dta/Estimatesmaxt30.dta) includes the estimates of interest across screening sensitivity and screening attendance scenarios for all simulated dataset. 
+Files of Stata code for the analyses of the simulated data are available in folder [`analysis`](https://github.com/syriop-elisa/lead_time_bias/blob/main/analysis):
+* [`compress_simulated_data.do`](https://github.com/syriop-elisa/lead_time_bias/blob/main/analysis/compress_simulated_data.do): reduces size of each dataset by ~30% after having simulated all datasets
+* [`obtain_estimates.do`](https://github.com/syriop-elisa/lead_time_bias/blob/main/analysis/obtain_estimates.do): obtain estimates of interest (i.e. externally age-standardised 10-year relative survival, LLE and PLL).
+The output of this file is called [`estimates.dta`](https://github.com/syriop-elisa/lead_time_bias/blob/main/dta/estimates.dta) and includes the estimates of interest across screening sensitivity and screening attendance scenarios for all simulated dataset. 
+
