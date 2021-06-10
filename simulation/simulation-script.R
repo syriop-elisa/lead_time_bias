@@ -7,16 +7,9 @@ library(simsurv)
 library(flexsurv)
 
 
-profiling <- grepl("apple", R.version$platform)
-if (profiling) {
-  library(profvis)
-  Sys.setenv(RSTUDIO_PANDOC = "/usr/local/bin/")
-}
-
-
-source("simulation_Rfiles/natural-history-model.R", echo = TRUE)
-source("simulation_Rfiles/screening.R", echo = TRUE)
-source("simulation_Rfiles/simulate-fpm.R", echo = TRUE)
+source("simulation/natural-history-model.R", echo = TRUE)
+source("simulation/screening.R", echo = TRUE)
+source("simulation/simulate-fpm.R", echo = TRUE)
 
 # first distribute the probabilities of onset at different ages
 # from incidence 1973
@@ -51,7 +44,7 @@ gam <- exp(-gammavar)
 d0 <- 0.5 # diameter
 
 # popmort for other cause mortality
-popmort <- haven::read_dta("popmort_projection.dta")
+popmort <- haven::read_dta("dta/popmort_projection.dta")
 popmort <- haven::zap_label(popmort)
 popmort <- haven::zap_labels(popmort)
 popmort <- haven::zap_formats(popmort)
@@ -143,7 +136,7 @@ for (i in seq(B)) {
     dplyr::left_join(rr_3_imperfect, by = "lopnr")
 
   # Now, export in Stata format
-  haven::write_dta(data = rr, path = glue::glue("simulated-data/simdata_maxt30_wide_{i}.dta"))
+  haven::write_dta(data = rr, path = glue::glue("dta/simdata_wide_{i}.dta"))
 
   # Advance progress bar
   utils::setTxtProgressBar(pb = pb, value = i)
