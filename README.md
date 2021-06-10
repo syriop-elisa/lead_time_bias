@@ -23,3 +23,23 @@ Files of Stata code for the analyses of the simulated data are available in fold
 * [`obtain_estimates.do`](https://github.com/syriop-elisa/lead_time_bias/blob/main/analysis/obtain_estimates.do): obtain estimates of interest (i.e. externally age-standardised 10-year relative survival, LLE and PLL).
 The output of this file is called [`estimates.dta`](https://github.com/syriop-elisa/lead_time_bias/blob/main/dta/estimates.dta) and includes the estimates of interest across screening sensitivity and screening attendance scenarios for all simulated dataset. 
 
+For the analysis, we use some user-written Stata commands.
+These can be installed within Stata from the Boston College Statistical Software Components (SSC) archive as described below. 
+
+To fit the flexible parametric survival models (FPMs):  
+* `ssc install stpm2`
+
+To generate the restricted cubic spline functions that is required for the FPMs:
+* `ssc install rcsgen`
+
+The `standsurv` command is used to obtain marginal estimates using regression standardisation and it can be installed by running:
+
+`net from https://www.pclambert.net/downloads/standsurv`
+
+Finally, the population lifetable required for obtaining the estimates of interest is available in the file [`popmort_projection.dta`](https://github.com/syriop-elisa/lead_time_bias/blob/main/dta/popmort_projection.dta)
+
+
+Files to summarise the results can be found in the folder [`summary`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary):
+* [`plots.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary/plots.R): produces figures for the bias and relative bias (Figure 1 and 2 of the paper, respectively)
+* [`table3_tableS3.do`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary/table3_tableS3.do): produces tables for the average estimates over 200 simulations and the relative bias (Table 3 and Table S3 of the paper)
+* [`table_S2.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary/table_S2.R): creates a table for the bias with 95\% confidence intervals based on Monte Carlo errors (Table S2 of the paper)
