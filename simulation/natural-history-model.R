@@ -61,7 +61,6 @@ natural_history_data <- function(pstarti, obs, tau1, tau2, d0, gam, popmort, yea
 
   # simulate survival time due to bc
   # Simulate the event times
-  print(nrow(simdf))
 
   dat <- simsurv(
     betas = mybeta, # "true" parameter values
