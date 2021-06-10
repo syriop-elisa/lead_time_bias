@@ -26,10 +26,10 @@ The output of this file is called [`estimates.dta`](https://github.com/syriop-el
 For the analysis, we use some user-written Stata commands.
 These can be installed within Stata from the Boston College Statistical Software Components (SSC) archive as described below. 
 
-To fit the flexible parametric survival models (FPMs):  
+To install the function required for fitting flexible parametric survival models (FPMs) type:  
 * `ssc install stpm2`
 
-To generate the restricted cubic spline functions that is required for the FPMs:
+To install the function required for generating the restricted cubic spline functions that are required for the FPMs type:
 * `ssc install rcsgen`
 
 The `standsurv` command is used to obtain marginal estimates using regression standardisation and it can be installed by running:
