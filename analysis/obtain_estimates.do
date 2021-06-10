@@ -1,4 +1,4 @@
-//Obtain estimates of 10-year RS, LLE and Proportion of life lost
+//Obtain estimates of externally age-standardised 10-year relative survival, loss in life expectancy (LLE) and proportion of life lost (PLL)
 
 local nsim 200
 
@@ -9,7 +9,7 @@ program define CIsim, rclass
 		       v(integer 1) ///	  
 		]
 
-	use simdata_maxt30_wide_`i'.dta, clear
+	use "dta/simdata_wide_`i'.dta", clear
 	
 	// for NO screening 
 	if `v'==0 {
@@ -60,7 +60,7 @@ program define CIsim, rclass
 	gen sex=2 //females
 	gen _age = min(int(agedet + _t),99)
 	gen _year = int(yeardet + _t)
-	merge m:1 sex _year _age using popmort_projection.dta, keep(matched master)
+	merge m:1 sex _year _age using "dta/popmort_projection.dta", keep(matched master)
 
 	// generate age groups for external weights
 	recode agedet (min/44.99999999=1) (45/54.999999999=2) (55/64.99999999=3) (65/74.99999999=4) (75/max=5), gen(ageICSS)	
@@ -83,7 +83,7 @@ program define CIsim, rclass
 	gen t90 = 90 in 1
 	replace agedet=int(agedet)
 	standsurv, at1(.) atvar(S_rmst) timevar(t90) ci  rmst indweights(w) ///
-		expsurv(using(popmort_projection.dta)  ///
+		expsurv(using("dta/popmort_projection.dta")  ///
 		datediag(yeardet)               ///
 		agediag(agedet)               ///
 		pmrate(rate)			   ///
@@ -113,7 +113,7 @@ end
 
 //store estimates
 tempname estimates 
-postfile `estimates' i attendance method relsurv10 lle pll using Estimatesmaxt30.dta, replace
+postfile `estimates' i attendance method relsurv10 lle pll using "dta/estimates.dta", replace
 
 
 quietly{
