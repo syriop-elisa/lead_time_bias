@@ -8,10 +8,11 @@
 
 Need to run Descriptives.do first to produces descriptives0.dta and descriptives1.dta
 
+First, set working directory to folder lead_time_bias
 */
 
 
-// First, set working directory to folder lead_time_bias
+
 
 
 // **************Table 1****************** //

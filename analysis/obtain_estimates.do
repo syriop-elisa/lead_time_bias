@@ -1,4 +1,5 @@
 //Obtain estimates of externally age-standardised 10-year relative survival, loss in life expectancy (LLE) and proportion of life lost (PLL)
+// First, set working directory to folder lead_time_bias
 
 local nsim 200
 

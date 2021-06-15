@@ -2,7 +2,6 @@
 // Creates file descriptives0.dta for the whole age population 
 // Creates file descriptives1.dta that restricts descriptives to screening ages 40-74. To produce this, there is ***local subset 1*** in two locations!
 // Use Summarise_descriptives.do to produce a latex table  (Table 1, Table 2, Table S1)
-
 // First, set working directory to folder lead_time_bias
 
 local nsim 200

@@ -8,7 +8,9 @@ Code to create latex tables for the paper: 1. Table 3 - Estimates of externally 
 											with 2.5 and 97.5 percentiles based on 200 simulations. The reference scenario is the setting in which no screening is 
 											imposed andall cases are symptomatic.
 
+First, set working directory to folder lead_time_bias
 */
+
 
 use "dta/estimates.dta" , clear
 
