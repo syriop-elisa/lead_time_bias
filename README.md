@@ -40,6 +40,8 @@ Finally, the population lifetable required for obtaining the estimates of intere
 
 
 Files to summarise the results can be found in the folder [`summary`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary):
-* [`plots.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary/plots.R): produces figures for the bias and relative bias (Figure 1 and 2 of the paper, respectively)
+* [`data_preparation.do`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary/data_preparation.do): this file prepared data before creating Tables 1, 2, S1 of the paper. Output files: [`descriptives0.dta`](https://github.com/syriop-elisa/lead_time_bias/blob/main/dta/descriptives0.dta) and [`descriptives1.dta`](https://github.com/syriop-elisa/lead_time_bias/blob/main/dta/descriptives1.dta)
+* [`table1_table2_tableS1.do`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary/table1_table2_tableS1.do): produces tables with summary characteristics of the simulated data (Table 1, Table 2 and Table S1 of the paper)
 * [`table3_tableS3.do`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary/table3_tableS3.do): produces tables for the average estimates over 200 simulations and the relative bias (Table 3 and Table S3 of the paper)
 * [`table_S2.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary/table_S2.R): creates a table for the bias with 95\% confidence intervals based on Monte Carlo errors (Table S2 of the paper)
+* [`plots.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/summary/plots.R): produces figures for the bias and relative bias (Figure 1 and 2 of the paper, respectively)
