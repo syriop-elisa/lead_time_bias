@@ -7,7 +7,7 @@ Our simulation-based approach was informed by Swedish cancer registry data and u
 Different scenarios were assumed for screening sensitivity (low, moderate, high) as well as screening attendance to allow for settings where individuals may attend some visits but miss others.
 Estimates of 10-year relative survival, loss in life expectanct (LLE) and proportion of life lost (PLL) in the absence of screening were compared with estimates when screening was imposed to obtain the lead time bias. 
 
-A file has be created for the project under [`lead_time_bias.Rproj`](https://github.com/syriop-elisa/lead_time_bias/blob/main/lead_time_bias.Rproj).
+A file has be created for the project under [`lead_time_bias.Rproj`](https://github.com/syriop-elisa/lead_time_bias/blob/main/Lead_time_bias.Rproj).
 The code for simulating the data is available in the folder [`simulation`](https://github.com/syriop-elisa/lead_time_bias/tree/main/simulation) that includes the following files:
 
 * [`simulation-script.R`](https://github.com/syriop-elisa/lead_time_bias/blob/main/simulation/simulation-script.R): main file with parameters values
