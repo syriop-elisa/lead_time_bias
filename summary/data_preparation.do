@@ -128,7 +128,7 @@ program define CIsim, rclass
 		global prop_dead_screen=$dead_screen/$totaldet
 
 		// store proportion by tumour size
-		recode sizedet_`v'_perfect (min/17.49999999=1) (17.5/32.49999999=2) (32.5/47.49999999=3) (47.5/max=4), gen(sizedet_grp)
+		recode sizedet_`v'_`a' (min/17.49999999=1) (17.5/32.49999999=2) (32.5/47.49999999=3) (47.5/max=4), gen(sizedet_grp)
 		count if sizedet_grp==1
 		global sizedet1=`r(N)'
 		global prop_sizedet1=$sizedet1/$totaldet
